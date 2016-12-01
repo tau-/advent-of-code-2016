@@ -53,9 +53,7 @@ def part1(commands):
     position = (0, 0)
     direction = (0, 1)
 
-    for cmd in commands:
-        turn = cmd[0]
-        dist = cmd[1]
+    for (turn, dist) in commands:
         direction = change_direction(direction, turn)
         position = (position[0] + direction[0] * dist, position[1] + direction[1] * dist)
 
@@ -70,9 +68,7 @@ def part2(commands):
     revisited = None
     visited[position] = True
 
-    for cmd in commands:
-        turn = cmd[0]
-        dist = cmd[1]
+    for (turn, dist) in commands:
         direction = change_direction(direction, turn)
         for _ in range(dist):
             position = (position[0] + direction[0], position[1] + direction[1])
@@ -81,7 +77,7 @@ def part2(commands):
             else:
                 visited[position] = True
 
-    return 0
+    return -1
 
 
 def taxicab_distance(pos):
