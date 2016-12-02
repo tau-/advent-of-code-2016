@@ -98,6 +98,6 @@ if __name__ == '__main__':
         input = file.readline().split(',')
         commands = [(cmd.strip()[0], int(cmd.strip()[1:])) for cmd in input]
 
-        print("Part One:", part1(commands))
-        print("Part Two:", part2(commands))
+        print('Part One:', part1(commands))
+        print('Part Two:', part2(commands))
 
