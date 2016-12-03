@@ -86,21 +86,21 @@ keypad_diamond = [[None, None, 1,   None, None],
                   [None, None, 'D', None, None]]
 
 
+delta = {'U': (0, -1),
+         'D': (0, 1),
+         'L': (-1, 0),
+         'R': (1, 0)}
+
+
 def move(pos, dir):
-    if dir == 'U':
-        return (pos[0], pos[1] - 1)
-    elif dir == 'D':
-        return (pos[0], pos[1] + 1)
-    elif dir == 'L':
-        return (pos[0] - 1, pos[1])
-    elif dir == 'R':
-        return (pos[0] + 1, pos[1])
-    else:
-        return pos
+    (x, y) = pos
+    (dx, dy) = delta[dir]
+    return (x + dx, y + dy)
 
 
 def bounded_move(pos, dir, area):
     (x, y) = move(pos, dir)
+
     y = y if y < len(area) else len(area)-1
     y = y if y > -1 else 0
     x = x if x < len(area[y]) else len(area[y])-1
@@ -115,10 +115,12 @@ def bounded_move(pos, dir, area):
 def find_keycode(commands, starting_position, keypad):
     (x, y) = starting_position
     code = []
+    
     for cmd in commands:
         for dir in cmd:
             (x, y) = bounded_move((x, y), dir, keypad)
         code.append(str(keypad[y][x]))
+    
     return ''.join(code)
 
 
