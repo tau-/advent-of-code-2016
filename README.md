@@ -14,7 +14,21 @@ day in the corresponding `.clj` files.
 
 ### Build Environment
 
-Leiningen 2.7.1 on Java 1.8.0_66 OpenJDK 64-Bit Server VM.
+Leiningen 2.7.1 on Java 1.8.0_66 OpenJDK 64-Bit Server VM. Python 3.5.1.
+
+### Python 3
+
+Use the included `solve.py` script to run one or all of the python solutions. Display all solutions with
+
+```
+$ python3 solve.py
+```
+
+Compute the solution for a single day with 
+
+```
+$ python3 solve.py 1
+```
 
 ### Leiningen
 
