@@ -8,7 +8,7 @@ in Python3 and Clojure.
 Solutions will be posted as I write them, but you can use this project to make your own.
 
 Save your input to `input/01.txt`, `input/02.txt`, etc. Then, write your solution and tests for each
-day in the corresponding `.clj` files.
+day in the corresponding `.clj` and `.py` files.
 
 ## Development
 
