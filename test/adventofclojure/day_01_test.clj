@@ -3,12 +3,12 @@
             [adventofclojure.day-01 :refer :all]))
 
 (deftest move-test
-  (is (=  {:dir :n, :n 1, :s 0, :e 0, :w 0} (move starting-state "X1"))))
+  (is (= {:dir :n, :n 1, :s 0, :e 0, :w 0} (move starting-state "X1"))))
 
 (deftest turn-test
-  (is (=  {:dir :n, :n 0, :s 0, :e 0, :w 0} (turn starting-state "X0")))
-  (is (=  {:dir :w, :n 0, :s 0, :e 0, :w 0} (turn starting-state "L0")))
-  (is (=  {:dir :e, :n 0, :s 0, :e 0, :w 0} (turn starting-state "R0"))))
+  (is (= {:dir :n, :n 0, :s 0, :e 0, :w 0} (turn starting-state "X0")))
+  (is (= {:dir :w, :n 0, :s 0, :e 0, :w 0} (turn starting-state "L0")))
+  (is (= {:dir :e, :n 0, :s 0, :e 0, :w 0} (turn starting-state "R0"))))
 
 (deftest add-crumb-test
   (is (= {:dir :n, :n 1, :s 0, :e 1, :w 0, :crumbs '({:x 1, :y 1} {:x 0, :y 0})}
